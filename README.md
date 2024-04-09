@@ -45,6 +45,6 @@ npm run build
 yarn build
 ```
 
-## Типы
+## Типы и Классы
 
-![Types descriptions](https://github.com/FreshSymbol/web-larek-frontend/blob/main/types.jpg)
+![Types descriptions](https://github.com/FreshSymbol/web-larek-frontend/blob/main/images.jpg)

@@ -1,51 +1,43 @@
-//Тип описывающий категории продукта
-type Category =
+//Типы категорий товаров
+export type Category =
 	| 'софт-скил'
+	| 'хард-скил'
 	| 'другое'
-	| 'кнопка'
-	| 'дополнительное'
-	| 'хард-скил';
+	| 'допольнительное'
+	| 'кнопка';
 
-//Тип описывающий айди
-type Id = number | string;
-
-//Интерфейс для эмитера, обрабатывает события
-interface IEventEmitter {
-	emit(event: string, data: unknown): void;
-}
-
-//Интерфейс данных продукта
-interface IProductModel {
+//Интерфейс модели данных продукта
+export interface IProduct {
+	id: string;
 	category: Category;
 	title: string;
 	image: string;
-	about: string;
-	price: number;
+	price: number | null;
+	description: string;
 }
 
-//Интерфейс данных заказа
-interface IOrderModel {
+//Интерфейс модели данных заказа
+export interface IOrder {
 	payment: string;
 	address: string;
+}
+
+//Интерфейс модели контактов заказа
+export interface IContacts {
 	email: string;
 	phone: string;
 }
 
-//Интерфейс каталог продуктов
-interface ICatalog<T> {
-	products: T;
-	setProducts(products: T[]): void;
-	getProducts(): T[];
+//Интерфейс содержит коллекцию продуктов,возможность добавлять и удалять товары из корзины
+export interface IBasket {
+	products: Map<string, number>;
+	addProduct(product: IProduct): void;
+	removeProduct(product: IProduct): void;
 }
 
-//Интерфейс корзины
-interface IBacket<T> {
-	products: Set<T>;
-	add(id: Id): void;
-	remove(id: Id): void;
-}
-
-//Интерфейс вью, служит базовым для классов отобрадение
-interface IView {
-	render(data?: object): HTMLElement;
+//Интерфейс каталога, можно инициализировать и получить продукт
+export interface ICatalog {
+	products: IProduct[];
+	setProducts(products: IProduct): void;
+	getProduct(id: string): IProduct;
 }
