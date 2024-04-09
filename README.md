@@ -47,4 +47,4 @@ yarn build
 
 ## Типы и Классы
 
-![Types descriptions](https://github.com/FreshSymbol/web-larek-frontend/blob/main/images.jpg)
+![Types descriptions](https://github.com/FreshSymbol/web-larek-frontend/blob/main/image.jpg)
