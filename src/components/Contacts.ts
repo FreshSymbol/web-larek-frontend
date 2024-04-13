@@ -1,9 +1,14 @@
-import { IContacts } from '../types';
 import { IEvents } from './base/events';
 import { Form } from './common/Form';
 
+//Интерфейс модели контактов заказа
+export interface IContacts {
+	email: string;
+	phone: string;
+}
+
 //Класс реализации контактов заказа
-export class Order extends Form<IContacts> {
+export class Contacts extends Form<IContacts> {
 	constructor(container: HTMLFormElement, events: IEvents) {
 		super(container, events);
 	}
